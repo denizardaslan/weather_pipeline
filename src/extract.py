@@ -3,6 +3,7 @@ from config import weather_station_url, weather_url, station_ids, years
 
 
 def extract():
+    print("Starting EXTRACT process...")
     try:
         # Fetch and save station data
         station = r.get(weather_station_url)

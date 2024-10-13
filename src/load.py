@@ -7,6 +7,7 @@ def load_sql_query(path):
 
 
 def load(df):
+    print("Starting LOAD process...")
     conn = sqlite3.connect("weather_data.db")
     cursor = conn.cursor()
 
