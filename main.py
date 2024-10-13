@@ -4,7 +4,7 @@ from src.load import load
 from src.s3_upload import save_to_s3
 
 if __name__ == "__main__":
-    # extract()
+    extract()
     df = transform()
     load(df)
 
