@@ -1,4 +1,4 @@
-# Weather Data ETL Pipeline Documentation
+# Weather Data ETL Pipeline
 
 ## Overview
 
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     load(df)
 
     # Step 4: (Optional) Upload to S3
-    upload_to_s3(file_name="mydata.csv", bucket_name="your-s3-bucket", object_name="weather_data.csv")
+    save_to_s3(df, bucket_name, file_name)
 ```
 
 ---
