@@ -53,13 +53,13 @@ The `transform.py` module processes the downloaded CSV files:
 - Cleans the data by dropping rows with missing temperature values.
 - Calculates the average, minimum, and maximum temperatures by station, year, and month.
 - Calculates the year-over-year (YoY) average temperature difference.
-- Saves the processed data into a CSV file for review (`mydata.csv`).
+- Saves the processed data into a CSV file for review `temp_stats.csv`.
 
 ### 3. Load
 
 The `load.py` module is responsible for loading the processed data into a SQLite database:
 - It reads SQL queries from external files to create the table and insert the data.
-- Connects to the SQLite database (`weather_data.db`).
+- Connects to the SQLite database `weather_data.db`.
 - Creates a table with the required schema.
 - Inserts the transformed data into the table.
 
@@ -94,7 +94,7 @@ The `load.py` module is responsible for loading the processed data into a SQLite
 
 The `s3_upload.py` module allows uploading the processed CSV to an S3 bucket for backup or further analysis. It:
 - Connects to AWS S3 using credentials.
-- Uploads the file in `tem_stats.csv` to the specified bucket and key.
+- Uploads the file in `temp_stats.csv` to the specified bucket and key.
 
 ---
 
@@ -118,7 +118,7 @@ if __name__ == "__main__":
     # Step 3: Load
     load(df)
 
-    # Step 4: (Optional) Upload to S3
+    # Step 4: Upload to S3
     save_to_s3(df, bucket_name, file_name)
 ```
 
